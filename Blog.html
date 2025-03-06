@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+</head>
+
+<body>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- SwiperJS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            padding-top: 64px;
+        }
+
+        nav {
+            background-color: black;
+        }
+
+        .service {
+            background-image: url('./Images/Contact.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 50vh;
+            /* Ensures it fills the viewport */
+        }
+    </style>
+
+
+    <nav class=" fixed top-0 left-0 z-50 w-full border-gray-700 dark:bg-gray-900  ">
+        <div class="  max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+
+            <!-- Logo -->
+            <a href="Index.html" class="flex items-center space-x-3">
+                <span class="text-3xl font-bold text-white hover:text-red-500 transition">FoxLeon.</span>
+            </a>
+
+            <!-- Menu & Icons -->
+            <div class="flex items-center md:order-2 space-x-4">
+                <!-- Search Icon -->
+                <div
+                    class="w-12 h-12 flex items-center justify-center border-2 border-gray-600 rounded-full hover:bg-red-600 transition duration-300 cursor-pointer">
+                    <i class="fa-solid fa-magnifying-glass text-gray-400 text-xl hover:text-white"></i>
+                </div>
+                <!-- User Icon -->
+                <div
+                    class="w-12 h-12 flex items-center justify-center border-2 border-gray-600 rounded-full hover:bg-red-600 transition duration-300 cursor-pointer">
+                    <i class="fa-solid fa-user text-gray-400 text-xl hover:text-white"></i>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Navigation Links -->
+            <div id="menu" class="hidden md:flex md:items-center md:space-x-8 md:order-1">
+                <ul class="flex flex-col md:flex-row md:space-x-8 font-medium">
+                    <li><a href="Index.html" class="block py-2 text-red-600 font-semibold text-xl">Home</a></li>
+                    <li><a href="About.html"
+                            class="block py-2 text-white hover:text-red-500 transition text-xl">About</a></li>
+                    <li><a href="Project.html" class="block py-2 text-white hover:text-red-500 transition text-xl">Project</a></li>
+                    <li><a href="Service.html"
+                            class="block py-2 text-white hover:text-red-500 transition text-xl">Services</a>
+                    </li>
+                    <li><a href="Contact.html"
+                            class="block py-2 text-white hover:text-red-500 transition text-xl">Contact</a></li>
+                    <li><a href="Blog.html" class="block py-2 text-white hover:text-red-500 transition text-xl">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 text-white py-4">
+            <ul class="flex flex-col items-center space-y-4">
+                <li><a href="Index.html" class="block text-red-600 font-semibold">Home</a></li>
+                <li><a href="About.html" class="block hover:text-red-500 transition">About</a></li>
+                <li><a href="Project.html" class="block hover:text-red-500 transition">Project</a></li>
+                <li><a href="Service.html" class="block hover:text-red-500 transition">Services</a></li>
+                <li><a href="Contact.html" class="block hover:text-red-500 transition">Contact</a></li>
+                <li><a href="Blog.html" class="block hover:text-red-500 transition">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="service relative bg-cover bg-center flex items-center justify-center h-screen">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative text-white text-center">
+            <h2 class="text-5xl font-bold">Blog</h2>
+            <p class="mt-2 text-lg">
+                <a href="Index.html" class="text-gray-300 hover:text-white">Home</a>
+                <span class="mx-2 text-gray-400">></span>
+                <span class="text-white">Blog</span>
+            </p>
+        </div>
+    </section>
+
+
+    <h1>Blog</h1>
+    <!-- Footer -->
+
+    <section class="bg-gray-900 text-gray-300 py-10">
+        <div class="container mx-auto px-6">
+
+            <!-- Social Media Links -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="hover:text-blue-500 transition">
+
+                    <i class="fa-brands fa-facebook-f text-2xl text-blue-500"></i>
+                </a>
+                <a href="#" class="hover:text-blue-400 transition">
+                    <i class="fa-brands fa-x-twitter text-blue-500  text-2xl"></i>
+                </a>
+                <a href="#" class="hover:text-pink-500 transition">
+
+                    <i
+                        class="fa-brands fa-instagram text-2xl  text-transparent bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 bg-clip-text "></i>
+                </a>
+                <a href="#" class="hover:text-red-500 transition">
+                    <i class="fa-brands fa-youtube text-2xl text-red-600"></i>
+
+                </a>
+            </div>
+
+            <!-- Info Sections -->
+            <div class="grid md:grid-cols-4 gap-8 text-center md:text-left">
+
+                <!-- About Us -->
+                <div>
+                    <h6 class="text-lg font-semibold text-white mb-3">ABOUT US</h6>
+                    <p class="text-sm text-gray-400">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+                    </p>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h5 class="text-lg font-semibold text-white mb-3">Newsletter</h5>
+                    <form class="flex flex-col space-y-3">
+                        <input type="email" placeholder="Enter your email" class="p-2 rounded bg-gray-800 text-white">
+                        <!-- <button class="bg-blue-600 hover:bg-blue-500 text-white py-2 rounded">Subscribe</button> -->
+                        <button
+                            class="bg-red-500 text-white  py-2 rounded-lg border-2 border-transparent transition duration-300 hover:border-red-600 hover:bg-transparent">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Need Help -->
+                <div>
+                    <h6 class="text-lg font-semibold text-white mb-3">NEED HELP</h6>
+                    <p class="text-sm text-gray-400">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+                    </p>
+                </div>
+
+                <!-- Contact Us -->
+                <div>
+                    <h6 class="text-lg font-semibold text-white mb-3">CONTACT US</h6>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fa fa-map-marker"></i> Gb road 123, USA</p>
+                        <p><i class="fa fa-phone"></i> +01 12345678901</p>
+                        <p><i class="fa fa-envelope"></i> vyduryainfo@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-8 border-t border-gray-700 py-4 text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; <span id="displayYear"></span> All Rights Reserved By
+                <a href="https://vyduryadigital.com/" class="text-red-600 hover:text-blue-300">Vydurya Digitals</a>
+            </p>
+        </footer>
+
+    </section>
+    <!-- Scroll Up Button -->
+    <!-- Scroll Button -->
+    <button id="scrollBtn"
+        class="fixed bottom-6 right-6 bg-red-500 text-white p-4 rounded-full shadow-lg hover:bg-red-600 transition">
+        ↓
+    </button>
+
+</body>
+<script src="Index.js"></script>
+
+</html>

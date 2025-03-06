@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About  Page</title>
+</head>
+
+<body>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- SwiperJS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+     <!-- FontAwesome for Icons (optional) -->
+     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            padding-top: 64px;
+        }
+
+        nav {
+            background-color: black;
+        }
+        .service {
+    background-image: url('./Images/About.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh; /* Ensures it fills the viewport */
+}
+@keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+    </style>
+
+
+<nav class=" fixed top-0 left-0 z-50 w-full border-gray-700 dark:bg-gray-900  ">
+    <div class="  max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+
+        <!-- Logo -->
+        <a href="Index.html" class="flex items-center space-x-3">
+            <span class="text-3xl font-bold text-white hover:text-red-500 transition">FoxLeon.</span>
+        </a>
+
+        <!-- Menu & Icons -->
+        <div class="flex items-center md:order-2 space-x-4">
+            <!-- Search Icon -->
+            <div
+                class="w-12 h-12 flex items-center justify-center border-2 border-gray-600 rounded-full hover:bg-red-600 transition duration-300 cursor-pointer">
+                <i class="fa-solid fa-magnifying-glass text-gray-400 text-xl hover:text-white"></i>
+            </div>
+            <!-- User Icon -->
+            <div
+                class="w-12 h-12 flex items-center justify-center border-2 border-gray-600 rounded-full hover:bg-red-600 transition duration-300 cursor-pointer">
+                <i class="fa-solid fa-user text-gray-400 text-xl hover:text-white"></i>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <div id="menu" class="hidden md:flex md:items-center md:space-x-8 md:order-1">
+            <ul class="flex flex-col md:flex-row md:space-x-8 font-medium">
+                <li><a href="Index.html" class="block py-2 text-red-600 font-semibold text-xl">Home</a></li>
+                <li><a href="About.html" class="block py-2 text-white hover:text-red-500 transition text-xl">About</a></li>
+                <li><a href="Project.html" class="block py-2 text-white hover:text-red-500 transition text-xl">Project</a></li>
+                <li><a href="Service.html"
+                        class="block py-2 text-white hover:text-red-500 transition text-xl">Services</a>
+                </li>
+                <li><a href="Contact.html" class="block py-2 text-white hover:text-red-500 transition text-xl">Contact</a></li>
+                <li><a href="Blog.html" class="block py-2 text-white hover:text-red-500 transition text-xl">Blog</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 text-white py-4">
+        <ul class="flex flex-col items-center space-y-4">
+            <li><a href="Index.html" class="block text-red-600 font-semibold">Home</a></li>
+            <li><a href="About.html" class="block hover:text-red-500 transition">About</a></li>
+            <li><a href="Project.html" class="block hover:text-red-500 transition">Project</a></li>
+            <li><a href="Service.html" class="block hover:text-red-500 transition">Services</a></li>
+            <li><a href="Contact.html" class="block hover:text-red-500 transition">Contact</a></li>
+            <li><a href="Blog.html" class="block hover:text-red-500 transition">Blog</a></li>
+        </ul>
+    </div>
+</nav>
+ <!-- Hero Section -->
+ <section class="service relative bg-cover bg-center flex items-center justify-center h-screen">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="relative text-white text-center">
+        <h2 class="text-5xl font-bold ">About</h2>
+        <p class="mt-2 text-lg">
+            <a href="Index.html" class="text-gray-300 hover:text-white ">Home</a>
+            <span class="mx-2 text-gray-400">></span>
+            <span class="text-white">About</span>
+        </p>
+    </div>
+</section>
+
+
+
+<section class="container mx-auto px-6 py-12 md:py-20">
+    <div class="flex flex-col md:flex-row items-center gap-10">
+        <!-- Left Side: Content -->
+        <div class="md:w-1/2 text-center md:text-left">
+            <h1 class="text-4xl font-bold text-gray-800">About Us</h1>
+            <p class="mt-4 text-gray-600 leading-relaxed">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, repellendus architecto quibusdam, sequi, aperiam doloribus iste quis 
+                aspernatur voluptas similique sunt eligendi? Fugit, voluptatibus tempora.
+            </p>
+        </div>
+
+        <!-- Right Side: Image -->
+        <div class="md:w-1/2">
+            <img src="./Images/About_content.png" alt="About Us" class="w-full max-w-sm mx-auto md:mx-0 rounded-lg shadow-lg">
+        </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-around items-center text-center gap-6">
+        <div class="p-4">
+            <h3 class="text-4xl md:text-5xl font-bold text-gray-800 counter" data-target="4615">0</h3>
+            <p class="text-gray-600 text-sm md:text-base">Happy Users</p>
+        </div>
+        <div class="p-4">
+            <h3 class="text-4xl md:text-5xl font-bold text-gray-800 counter" data-target="4307">0</h3>
+            <p class="text-gray-600 text-sm md:text-base">Music Video</p>
+        </div>
+        <div class="p-4">
+            <h3 class="text-4xl md:text-5xl font-bold text-gray-800 counter" data-target="2495">0</h3>
+            <p class="text-gray-600 text-sm md:text-base">Short Films</p>
+        </div>
+        <div class="p-4">
+            <!-- Placeholder for future content -->
+        </div>
+    </div>
+   
+</section>
+
+
+
+
+
+
+<section class="py-16 px-6 bg-gradient-to-r from-gray-50 to-gray-100">
+    <!-- Heading -->
+    <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Meet Our Team</h2>
+        <p class="text-lg md:text-xl text-gray-600 mt-3 max-w-2xl mx-auto">The creative minds and dedicated professionals driving our success.</p>
+    </div>
+
+    <!-- Team Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        
+        <!-- Team Member 1 -->
+        <div class="relative flex flex-col items-center bg-white shadow-xl p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <div class="relative">
+                <img src="https://www.wilsoncenter.org/sites/default/files/media/images/person/james-person-1.jpg" alt="Lyn Bryan" class="w-32 h-32 rounded-full object-cover border-4 border-indigo-100">
+                <div class="absolute inset-0 rounded-full bg-indigo-500 opacity-0 hover:opacity-10 transition-opacity duration-300"></div>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Lyn Bryan</h3>
+            <p class="text-sm text-gray-500">CEO</p>
+            <div class="mt-4 flex space-x-4">
+                <a href="#" class="text-indigo-500 hover:text-indigo-700 transition-colors duration-200">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors duration-200">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="relative flex flex-col items-center bg-white shadow-xl p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <div class="relative">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3m972e8FEvBi7ETC03avlJcZDg8nT9dWLSw&s" alt="Lauren Pybus" class="w-32 h-32 rounded-full object-cover border-4 border-indigo-100">
+                <div class="absolute inset-0 rounded-full bg-indigo-500 opacity-0 hover:opacity-10 transition-opacity duration-300"></div>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Lauren Pybus</h3>
+            <p class="text-sm text-gray-500">VP, Growth & Development</p>
+            <div class="mt-4 flex space-x-4">
+                <a href="#" class="text-indigo-500 hover:text-indigo-700 transition-colors duration-200">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors duration-200">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="relative flex flex-col items-center bg-white shadow-xl p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <div class="relative">
+                <img src="https://www.jamsadr.com/images/neutrals/person-donald-900x1080.jpg" alt="Raelene Thomas" class="w-32 h-32 rounded-full object-cover border-4 border-indigo-100">
+                <div class="absolute inset-0 rounded-full bg-indigo-500 opacity-0 hover:opacity-10 transition-opacity duration-300"></div>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Raelene Thomas</h3>
+            <p class="text-sm text-gray-500">VP, Finance & Operations</p>
+            <div class="mt-4 flex space-x-4">
+                <a href="#" class="text-indigo-500 hover:text-indigo-700 transition-colors duration-200">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors duration-200">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="relative flex flex-col items-center bg-white shadow-xl p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <div class="relative">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyzTWQoCUbRNdiyorem5Qp1zYYhpliR9q0Bw&s" alt="Mitchell Fawcett" class="w-32 h-32 rounded-full object-cover border-4 border-indigo-100">
+                <div class="absolute inset-0 rounded-full bg-indigo-500 opacity-0 hover:opacity-10 transition-opacity duration-300"></div>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-gray-800">Mitchell Fawcett</h3>
+            <p class="text-sm text-gray-500">VP, Strategy</p>
+            <div class="mt-4 flex space-x-4">
+                <a href="#" class="text-indigo-500 hover:text-indigo-700 transition-colors duration-200">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors duration-200">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Footer -->
+
+<section class="bg-gray-900 text-gray-300 py-10">
+    <div class="container mx-auto px-6">
+
+        <!-- Social Media Links -->
+        <div class="flex justify-center space-x-6 mb-8">
+            <a href="#" class="hover:text-blue-500 transition">
+
+                <i class="fa-brands fa-facebook-f text-2xl text-blue-500"></i>
+            </a>
+            <a href="#" class="hover:text-blue-400 transition">
+                <i class="fa-brands fa-x-twitter text-blue-500  text-2xl"></i>
+            </a>
+            <a href="#" class="hover:text-pink-500 transition">
+
+                <i
+                    class="fa-brands fa-instagram text-2xl  text-transparent bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 bg-clip-text "></i>
+            </a>
+            <a href="#" class="hover:text-red-500 transition">
+                <i class="fa-brands fa-youtube text-2xl text-red-600"></i>
+
+            </a>
+        </div>
+
+        <!-- Info Sections -->
+        <div class="grid md:grid-cols-4 gap-8 text-center md:text-left">
+
+            <!-- About Us -->
+            <div>
+                <h6 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-3">ABOUT US</h6>
+                <p class="text-sm text-gray-400">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+                </p>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h5 class="text-lg font-semibold text-white mb-3">Newsletter</h5>
+                <form class="flex flex-col space-y-3">
+                    <input type="email" placeholder="Enter your email" class="p-2 rounded bg-gray-800 text-white">
+                    <!-- <button class="bg-blue-600 hover:bg-blue-500 text-white py-2 rounded">Subscribe</button> -->
+                    <button
+                    class="bg-red-500 text-white  py-2 rounded-lg border-2 border-transparent transition duration-300 hover:border-red-600 hover:bg-transparent">
+                    Subscribe
+                </button>
+                </form>
+            </div>
+
+            <!-- Need Help -->
+            <div>
+                <h6 class="text-lg font-semibold text-white mb-3">NEED HELP</h6>
+                <p class="text-sm text-gray-400">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+                </p>
+            </div>
+
+            <!-- Contact Us -->
+            <div>
+                <h6 class="text-lg font-semibold text-white mb-3">CONTACT US</h6>
+                <div class="space-y-2 text-gray-400">
+                    <p><i class="fa fa-map-marker"></i> Gb road 123, USA</p>
+                    <p><i class="fa fa-phone"></i> +01 12345678901</p>
+                    <p><i class="fa fa-envelope"></i> vyduryainfo@gmail.com</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-8 border-t border-gray-700 py-4 text-center">
+        <p class="text-gray-400 text-sm">
+            &copy; <span id="displayYear"></span> All Rights Reserved By
+            <a href="https://vyduryadigital.com/" class="text-red-600 hover:text-blue-300">Vydurya Digitals</a>
+        </p>
+    </footer>
+
+</section>
+<!-- Scroll Up Button -->
+<!-- Scroll Button -->
+<button id="scrollBtn" class="fixed bottom-6 right-6 bg-red-500 text-white p-4 rounded-full shadow-lg hover:bg-red-600 transition">
+    <span id="arrow">↓</span> <!-- Down arrow by default -->
+</button>
+
+
+</body>
+
+
+<script src="Index.js"></script>
+</html>

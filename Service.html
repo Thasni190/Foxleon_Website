@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Page</title>
+</head>
+
+<body>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- SwiperJS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        body {
+            padding-top: 64px;
+        }
+
+        nav {
+            background-color: black;
+        }
+
+        .service {
+            background-image: url('./Images/service.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 50vh;
+
+        }
+
+        .card {
+            position: relative;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Overlay Styling */
+        .card .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: rgba(226, 58, 58, 0.9); */
+            background-color: (255, 105, 0, 1) ;
+            /* Dark red */
+            transform: translateY(100%);
+            transition: transform 0.3s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+
+        .card:hover .overlay {
+            transform: translateY(0);
+        }
+
+        .card .content {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .card:hover .content {
+            opacity: 0;
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+
+
+    <nav class=" fixed top-0 left-0 z-50 w-full border-gray-700 dark:bg-gray-900  ">
+        <div class="  max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+
+            <!-- Logo -->
+            <a href="Index.html" class="flex items-center space-x-3">
+                <span class="text-3xl font-bold text-white hover:text-red-500 transition">FoxLeon.</span>
+            </a>
+
+            <!-- Menu & Icons -->
+            <div class="flex items-center md:order-2 space-x-4">
+                <!-- Search Icon -->
+                <div
+                    class="w-12 h-12 flex items-center justify-center border-2 border-gray-600 rounded-full hover:bg-red-600 transition duration-300 cursor-pointer">
+                    <i class="fa-solid fa-magnifying-glass text-gray-400 text-xl hover:text-white"></i>
+                </div>
+                <!-- User Icon -->
+                <div
+                    class="w-12 h-12 flex items-center justify-center border-2 border-gray-600 rounded-full hover:bg-red-600 transition duration-300 cursor-pointer">
+                    <i class="fa-solid fa-user text-gray-400 text-xl hover:text-white"></i>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Navigation Links -->
+            <div id="menu" class="hidden md:flex md:items-center md:space-x-8 md:order-1">
+                <ul class="flex flex-col md:flex-row md:space-x-8 font-medium">
+                    <li><a href="Index.html" class="block py-2 text-red-600 font-semibold text-xl">Home</a></li>
+                    <li><a href="About.html"
+                            class="block py-2 text-white hover:text-red-500 transition text-xl">About</a></li>
+                    <li><a href="Project.html" class="block py-2 text-white hover:text-red-500 transition text-xl">Project</a></li>
+                    <li><a href="Service.html"
+                            class="block py-2 text-white hover:text-red-500 transition text-xl">Services</a>
+                    </li>
+                    <li><a href="Contact.html"
+                            class="block py-2 text-white hover:text-red-500 transition text-xl">Contact</a></li>
+                    <li><a href="Blog.html" class="block py-2 text-white hover:text-red-500 transition text-xl">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 text-white py-4">
+            <ul class="flex flex-col items-center space-y-4">
+                <li><a href="Index.html" class="block text-red-600 font-semibold">Home</a></li>
+                <li><a href="About.html" class="block hover:text-red-500 transition">About</a></li>
+                <li><a href="Project.html" class="block hover:text-red-500 transition">Project</a></li>
+                <li><a href="Service.html" class="block hover:text-red-500 transition">Services</a></li>
+                <li><a href="Contact.html" class="block hover:text-red-500 transition">Contact</a></li>
+                <li><a href="Blog.html" class="block hover:text-red-500 transition">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="service relative bg-cover bg-center flex items-center justify-center h-screen">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative text-white text-center">
+            <h2 class="text-5xl font-bold">Service</h2>
+            <p class="mt-2 text-lg">
+                <a href="Index.html" class="text-gray-300 hover:text-white">Home</a>
+                <span class="mx-2 text-gray-400">></span>
+                <span class="text-white">Service</span>
+            </p>
+        </div>
+    </section>
+
+
+
+    <section class="from-blue-50 to-gray-100 py-10 px-6" id="serviceSection">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Our Services</h2>
+            <p class="mt-4 text-black text-lg max-w-3xl mx-auto">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates blanditiis eos provident illum
+                debitis porro? Numquam beatae, fugiat voluptatum enim a nihil delectus et omnis?
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+            <!-- Service 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center relative">
+
+                <img src="./Service_image/Branching_product.avif" alt="Service Image"
+                    class="w-40 h-40 rounded-full object-cover mx-auto flex items-center justify-center">
+
+                <h3 class="text-xl font-semibold mt-4">Branching Product</h3>
+                <p class="text-gray-600 mt-2">We help expand your products into new markets and industries.</p>
+                <button class="mt-4 text-red-500 font-bold">MORE</button>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="./Service_image/creative_design.jpg" alt="Service Image"
+                    class="w-40 h-40 rounded-full object-cover mx-auto flex items-center justify-center">
+
+                <h3 class="text-xl font-semibold mt-4">Creative Design</h3>
+                <p class="text-gray-600 mt-2">Innovative and engaging design solutions for your business.</p>
+                <button class="mt-4 text-red-500 font-bold">MORE</button>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="./Service_image/find_ideas.jpg" alt="Service Image"
+                    class="w-40 h-40 rounded-full object-cover mx-auto flex items-center justify-center">
+
+                <h3 class="text-xl font-semibold mt-4">Finding Names & Captions</h3>
+                <p class="text-gray-600 mt-2">We craft impactful brand names and captivating captions.</p>
+                <button class="mt-4 text-red-500 font-bold">MORE</button>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+            <!-- Service 4 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center relative">
+
+                <img src="./Service_image/Branching_product.avif" alt="Service Image"
+                    class="w-40 h-40 rounded-full object-cover mx-auto flex items-center justify-center">
+
+                <h3 class="text-xl font-semibold mt-4">video production</h3>
+                <p class="text-gray-600 mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, incidunt!
+                </p>
+                <button class="mt-4 text-red-500 font-bold">MORE</button>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="./Service_image/creative_design.jpg" alt="Service Image"
+                    class="w-40 h-40 rounded-full object-cover mx-auto flex items-center justify-center">
+
+                <h3 class="text-xl font-semibold mt-4">Digital Marketing</h3>
+                <p class="text-gray-600 mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda
+                    recusandae explicabo doloribus blanditiis voluptatum ullam.</p>
+                <button class="mt-4 text-red-500 font-bold">MORE</button>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="./Service_image/find_ideas.jpg" alt="Service Image"
+                    class="w-40 h-40 rounded-full object-cover mx-auto flex items-center justify-center">
+
+                <h3 class="text-xl font-semibold mt-4">Web Technology</h3>
+                <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+                    consectetur eaque hic fuga sunt sint quibusdam.</p>
+                <button class="mt-4 text-red-500 font-bold">MORE</button>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+            <!-- Service 7 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center relative">
+
+                <img src="./Service_image/Branching_product.avif" alt="Service Image"
+                    class="w-40 h-40 rounded-full object-cover mx-auto flex items-center justify-center">
+
+                <h3 class="text-xl font-semibold mt-4">Photography</h3>
+                <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit,
+                    enim quisquam sapiente tenetur fugiat at voluptatum a explicabo.</p>
+                <button class="mt-4 text-red-500 font-bold">MORE</button>
+            </div>
+
+            <!-- Service 8 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="./Service_image/creative_design.jpg" alt="Service Image"
+                    class="w-40 h-40 rounded-full object-cover mx-auto flex items-center justify-center">
+
+                <h3 class="text-xl font-semibold mt-4">Corporate Events</h3>
+                <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id nobis
+                    voluptas illo atque minima.</p>
+                <button class="mt-4 text-red-500 font-bold">MORE</button>
+            </div>
+
+            <!-- Service 9 -->
+            <!-- <div class="bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="./Service_image/find_ideas.jpg" alt="Service Image" class="w-40 h-40 rounded-full object-cover mx-auto flex items-center justify-center">
+
+                <h3 class="text-xl font-semibold mt-4">Trade mark</h3>
+                <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores dolorem sequi ipsam doloremque tempore sed.</p>
+                <button class="mt-4 text-red-500 font-bold">MORE</button>
+            </div> -->
+
+            <div class="card relative bg-white p-6 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+                <!-- Image -->
+                <img src="./Service_image/find_ideas.jpg" alt="Service Image"
+                    class="mx-auto w-32 h-32 rounded-full object-cover transition-transform duration-300 hover:scale-110">
+            
+                <!-- Original Content (Hidden on Hover) -->
+                <div class="content transition-opacity duration-300 hover:opacity-0 text-center">
+                    <h3 class="text-xl font-semibold mt-4">Trade mark</h3>
+                <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores dolorem sequi ipsam doloremque tempore sed.</p>
+                <button class="mt-4 text-red-500 font-bold">MORE</button>
+                </div>
+            
+                <!-- Overlay (Appears on Hover) -->
+                <div class="overlay absolute inset-0 bg-red-500 flex flex-col items-center justify-center text-white text-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                    <h3 class="text-xl font-semibold">Trade Mark</h3>
+                    <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores dolorem sequi ipsam doloremque tempore sed.</p>
+                    <button class="mt-4 border-2 border-white px-4 py-2">MORE</button>
+                </div>
+            </div>
+            
+
+
+
+
+        </div>
+
+
+
+
+
+
+    </section>
+    <!-- Footer -->
+
+    <section class="bg-gray-900 text-gray-300 py-10">
+        <div class="container mx-auto px-6">
+
+            <!-- Social Media Links -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="hover:text-blue-500 transition">
+
+                    <i class="fa-brands fa-facebook-f text-2xl text-blue-500"></i>
+                </a>
+                <a href="#" class="hover:text-blue-400 transition">
+                    <i class="fa-brands fa-x-twitter text-blue-500  text-2xl"></i>
+                </a>
+                <a href="#" class="hover:text-pink-500 transition">
+
+                    <i
+                        class="fa-brands fa-instagram text-2xl  text-transparent bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 bg-clip-text "></i>
+                </a>
+                <a href="#" class="hover:text-red-500 transition">
+                    <i class="fa-brands fa-youtube text-2xl text-red-600"></i>
+
+                </a>
+            </div>
+
+            <!-- Info Sections -->
+            <div class="grid md:grid-cols-4 gap-8 text-center md:text-left">
+
+                <!-- About Us -->
+                <div>
+                    <h6 class="text-lg font-semibold text-white mb-3">ABOUT US</h6>
+                    <p class="text-sm text-gray-400">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+                    </p>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h5 class="text-lg font-semibold text-white mb-3">Newsletter</h5>
+                    <form class="flex flex-col space-y-3">
+                        <input type="email" placeholder="Enter your email" class="p-2 rounded bg-gray-800 text-white">
+                        <!-- <button class="bg-blue-600 hover:bg-blue-500 text-white py-2 rounded">Subscribe</button> -->
+                        <button
+                            class="bg-red-500 text-white  py-2 rounded-lg border-2 border-transparent transition duration-300 hover:border-red-600 hover:bg-transparent">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Need Help -->
+                <div>
+                    <h6 class="text-lg font-semibold text-white mb-3">NEED HELP</h6>
+                    <p class="text-sm text-gray-400">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+                    </p>
+                </div>
+
+                <!-- Contact Us -->
+                <div>
+                    <h6 class="text-lg font-semibold text-white mb-3">CONTACT US</h6>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fa fa-map-marker"></i> Gb road 123, USA</p>
+                        <p><i class="fa fa-phone"></i> +01 12345678901</p>
+                        <p><i class="fa fa-envelope"></i> vyduryainfo@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-8 border-t border-gray-700 py-4 text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; <span id="displayYear"></span> All Rights Reserved By
+                <a href="https://vyduryadigital.com/" class="text-red-600 hover:text-blue-300">Vydurya Digitals</a>
+            </p>
+        </footer>
+
+    </section>
+    <!-- Scroll Up Button -->
+    <!-- Scroll Button -->
+    <button id="scrollBtn"
+        class="fixed bottom-6 right-6 bg-red-500 text-white p-4 rounded-full shadow-lg hover:bg-red-600 transition">
+        ↓
+    </button>
+
+</body>
+<script src="Index.js"></script>
+
+</html>
